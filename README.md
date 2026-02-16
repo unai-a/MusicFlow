@@ -27,37 +27,114 @@ A beautiful, modern music player web application that searches YouTube and plays
 - **[Lucide Icons](https://lucide.dev/)** - Icon library
 - **[YouTube IFrame API](https://developers.google.com/youtube/iframe_api_reference)** - Audio playback
 
-## 📦 Installation
+## 📦 Installation & Local Deployment
 
 ### Prerequisites
 
-- Node.js 18+ 
-- Bun (recommended) or npm
+- **Node.js 18+** - [Download here](https://nodejs.org/)
+- **Bun** (recommended) or **npm**
 
-### Clone & Install
+### Step 1: Clone the Repository
 
 ```bash
-# Clone the repository
+# Clone from GitHub
 git clone https://github.com/YOUR_USERNAME/musicflow.git
 
-# Navigate to project
+# Navigate to project folder
 cd musicflow
+```
 
-# Install dependencies
+### Step 2: Install Dependencies
+
+Using Bun (recommended):
+```bash
 bun install
-# or
+```
+
+Or using npm:
+```bash
 npm install
 ```
 
-### Run Development Server
+### Step 3: Run Development Server
 
+Using Bun:
 ```bash
 bun run dev
-# or
+```
+
+Or using npm:
+```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+### Step 4: Open in Browser
+
+Navigate to: **http://localhost:3000**
+
+That's it! The app is now running locally. 🎉
+
+---
+
+## 🏠 Local Development
+
+### Development Mode (with hot reload)
+
+```bash
+bun run dev
+```
+
+- Runs on `http://localhost:3000`
+- Automatically reloads when you make changes
+- Shows errors in the browser
+
+### Build for Production
+
+```bash
+# Create optimized production build
+bun run build
+
+# Start production server locally
+bun run start
+```
+
+This creates an optimized build in the `.next` folder.
+
+### Check for Code Issues
+
+```bash
+bun run lint
+```
+
+---
+
+## 🔧 Troubleshooting
+
+### Port 3000 already in use
+
+```bash
+# Kill process on port 3000 (macOS/Linux)
+lsof -i :3000 | grep LISTEN | awk '{print $2}' | xargs kill
+
+# Or use a different port
+bun run dev -- -p 3001
+```
+
+### Dependencies issues
+
+```bash
+# Clear node_modules and reinstall
+rm -rf node_modules bun.lockb
+bun install
+```
+
+### YouTube player not loading
+
+- Check your internet connection
+- Disable ad blockers for localhost
+- Try a different browser
+
+---
 
 ## 🚀 Deployment
 
